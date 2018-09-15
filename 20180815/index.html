@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>朋友圈实时时间转换</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="app">
+		<p align="center">{{thisTime}}</p>
+
+		<template v-for="list in lists">
+			<time-list :list='list'></time-list>
+		</template>
+	</div>
+	<script type="text/x-template" id="time-list">
+	
+		<div class="list">
+			<div class="left">
+				<a href="#" class="avatar_a"><img :src="list.avatar" class="avatar"></a>
+			</div>
+			<div class="right">
+				<div class="top">
+					<a href="#" class="user_n"><span>{{list.names}}</span></a>
+				</div>
+				<div class="main">
+					<p>{{list.content}}</p>
+					<img :src="list.url">
+				</div>
+				<div class="times">刚刚</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.js"></script>
+	<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
